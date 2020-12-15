@@ -1,0 +1,567 @@
+/* ************************ ESTILOS GENERALES ************************ */
+
+html{
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    margin: 0;;
+}
+
+.nav-container{
+    .nav-container__logoInicio{
+        font-family: 'Monoton', cursive;
+        font-size: 1.5em;
+        color: white;
+        text-decoration: none;
+    }
+    .nav-container__img{
+        width: 1.5em;
+        margin-left: 0.5em;
+        opacity: 0.5;
+    }
+    .nav-container__img:hover{
+        opacity: 0.75;
+    }
+}
+
+.main-container{
+    margin-top: 80px;
+    padding: 0% 5% 2% 5%;
+}
+
+.footer-container{
+    background-color: #000000;
+    color: #ffffff;
+    padding: 3em 2em 2em 2em;
+    font-size: 13px;
+
+    .footer-section__alert{
+        z-index: 5000; 
+        display: none; 
+        position: fixed; 
+        top: 7.5em; 
+        left: 1.5em;
+        margin-right: 1.5em;
+    }
+    .footer-section{
+        margin-top: 2em;
+
+        .footer-section__title{
+            margin-bottom: 1.5em;
+            color: yellow;
+        }
+        .footer-section__label{
+            margin-left: 0.4em;
+        }
+        .footer-section__small{
+            font-size: 0.9em;
+            margin-left: 0.4em;
+        }
+        .footer-section__shadow-color{
+            border-color: transparent;
+            border-width: 5px;
+        }
+
+        .footer-section__shadow-color:focus{
+            border-color: yellow;
+            border-width: 3px;
+            box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(0, 0, 0, 0.6);
+            outline: 0 none;
+        }
+        .footer-section__submit:hover{
+            margin-top: 2em;
+            color: black;
+            background-color: yellow;
+            border-color: transparent;
+            border-width: 2px;
+
+        }
+        .footer-section__submit{
+            margin-top: 2em;
+            color: white;
+            background-color: transparent;
+            border-color: yellow;
+            border-width: 2px;
+            font-weight: bold;
+        }
+        .footer-section__img{
+            width: 1.75em;
+            margin-bottom: 3em;
+        }
+        .footer-section__img:hover{
+            opacity: 0.70;
+        }
+    }
+    .footer-section__credits{
+        padding-top: 6em;
+    }
+}
+
+.scroll-btn {
+    position: fixed;
+    right: 2%;
+    bottom: 5%;
+    cursor: pointer;
+    width: 2.5em;
+    height: 2.5em;
+    background-color: yellow;
+    text-indent: -9999px;
+    z-index: 1000;
+    display: none;
+    border: 2px solid black;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: transform 0.3s, opacity 0.4s;
+
+    .scroll-btn__span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -8px;
+        margin-top: -12px;
+        height: 0;
+        width: 0;
+        border: 8px solid transparent;
+        border-bottom-color: black;
+    }
+
+}
+
+.scroll-btn:hover{
+    opacity: 1;
+}
+
+#scrollIndicator{
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2.5px;
+    background-color:yellow;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+
+}
+
+/* ************************ INICIO INDEX ************************ */
+
+.section-table{
+    margin: 6em 0em 2em 0em;
+
+    .section-table__btn{
+        margin-bottom: 1.5em;
+    }
+}
+
+/* ************************ INICIO INDEX ************************ */
+
+.section-carousel-container{
+
+    .section-carousel-div{
+        width: 100%;
+
+        .section-carousel-div__img{
+            width: 100%;
+            max-height: 95vh;
+        }
+
+    }
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+// Responsive
+@mixin responsive() {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+$content-font: Cardo;
+$heading-font: 'Pathway Gothic One',
+sans-serif;
+$timeline-width:700px;
+$timeline-container-width:100%;
+.timeline {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-width: $timeline-width;
+  position: relative;
+  &__content {
+    &-title {
+      font-weight: normal;
+      font-size: 66px;
+      margin: -10px 0 0 0;
+      transition: .4s;
+      padding: 0 10px;
+      box-sizing: border-box;
+      font-family: $heading-font;
+      color: #fff;
+    }
+    &-desc {
+      margin: 0;
+      font-size: 15px;
+      box-sizing: border-box;
+      color: rgba(#fff, .7);
+      font-family: $content-font;
+      font-weight: normal;
+      line-height: 25px;
+    }
+  }
+  &:before {
+    position: absolute;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    margin-left: -1px;
+    content: "";
+    background: rgba(255, 255, 255, .07);
+    @include responsive() {
+      left: 40px;
+    }
+  }
+  &-item {
+    padding: 40px 0;
+    opacity: .3;
+    filter: blur(2px);
+    transition: .5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+    &:before {
+      content: attr(data-text);
+      letter-spacing: 3px;
+      width: 100%;
+      position: absolute;
+      color: rgba(#fff, .5);
+      font-size: 13px;
+      font-family: $heading-font;
+      border-left: 2px solid rgba(#fff, .5);
+      top: 70%;
+      margin-top: -5px;
+      padding-left: 15px;
+      opacity: 0;
+      right: calc(-100% - 56px);
+    }
+    &:nth-child(even) {
+      align-self: flex-end;
+      &:before {
+        right: auto;
+        text-align: right;
+        left: calc(-100% - 56px);
+        padding-left: 0;
+        border-left: none;
+        border-right: 2px solid rgba(#fff, .5);
+        padding-right: 15px;
+      }
+    }
+    &--active {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+      &:before {
+        top: 50%;
+        transition: .3s all .2s;
+        opacity: 1;
+      }
+      .timeline__content-title {
+        margin: -50px 0 20px 0;
+      }
+    }
+    @include responsive() {
+      align-self: baseline !important;
+      width: 100%;
+      padding: 0 30px 150px 80px;
+      &:before {
+        left: 10px !important;
+        padding: 0 !important;
+        top: 50px;
+        text-align: center !important;
+        width: 60px;
+        border: none !important;
+      }
+      &:last-child {
+        padding-bottom: 40px;
+      }
+    }
+  }
+  &__img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, .4);
+  }
+  &-container {
+    width: $timeline-container-width;
+    position: relative;
+    padding: 80px 0;
+    transition: .3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(99, 99, 99, 0.8);
+      content: "";
+    }
+  }
+  &-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+    &__title {
+      color: #fff;
+      font-size: 46px;
+      font-family: $content-font;
+      font-weight: normal;
+      margin: 0;
+    }
+    &__subtitle {
+      color: rgba(255, 255, 255, .5);
+      font-family: $heading-font;
+      font-size: 16px;
+      letter-spacing: 5px;
+      margin: 10px 0 0 0;
+      font-weight: normal;
+    }
+  }
+}
+
+/* ************************ INICIO GALERÍA ************************ */
+.galeria-container{
+
+    .cardGaleria-section{
+        margin-top: 2em;
+        filter: grayscale(100%);
+        transition: transform 0.3s, filter 0.4s;
+
+        .cardGaleria-section__img{
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.4s;
+        }
+
+        .cardGaleria-section__img:hover{
+            -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,57,168,0); 
+            box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,57,168,0);
+        }
+
+        .cardGaleria-section__title{
+            position: absolute;
+            top: 1em;
+            left: 2em;
+            padding-right: 2em;
+            color: white;
+            font-weight: 500;
+        }
+
+    }
+    
+    .cardGaleria-section:hover{
+        filter: grayscale(0%);
+    }
+
+}
+
+/* ************************ INICIO TELESCOPIOS ************************ */
+
+.container-telescopios{
+    padding-top: 2em;
+
+    .container-tipos-telescopios{
+        margin-bottom: 1em;
+
+        .container-tipos-telescopios__titulo-box{
+            margin-bottom: 1em;
+        }
+
+        .container-tipos-telescopios__link{
+            margin-top: 1em;
+        }
+
+    }
+
+}
+
+/* ************************ INICIO NOTICIAS ************************ */
+
+.section-noticias-container{
+    padding-top: 2.5em;
+
+    .section-noticias-card{
+        margin-bottom: 2em;
+    }
+
+    .section-noticias-modal{
+        
+        .section-noticias-modal__img{
+            width: 100%;
+            margin-bottom: 1.5em;
+        }
+
+        .section-noticias-modal__p{
+            text-align: justify;
+            padding: 0.5em 1em 0em 1em;
+        }
+
+    }
+
+}
+
+.noticia-container{
+    margin-top: 2em;
+
+    .section-noticia{
+
+        .section-noticias__link-back{
+            margin-bottom: 1em;
+        }
+
+        .section-noticia__parrafo{
+            text-align: justify;
+        }
+
+        .section-noticia__h4{
+            padding-top: 1em;
+        }
+
+        .section-noticia__link{
+            margin: 1em 0em 1.5em 0em;
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            .section-noticia__parrafo{
+                margin-top: 1.5em;
+            }
+
+            .section-noticia__img{
+                margin: 2em 0em 1.5em 0em;
+            }
+    
+        }
+
+        
+        @media only screen and (max-width: 767px) {
+
+            .section-noticia__parrafo{
+                margin-top: 1em;
+            }
+
+            .section-noticia__img{
+                margin: 1em 0em 1em 0em;
+            }
+    
+        }
+
+
+        .section-noticia-img-text{
+
+            .section-noticia-img-text__img{
+                width: 100%;
+                max-height: 30em;
+            }
+    
+            @media only screen and (min-width: 768px) {
+                
+                .section-noticia-encabezados{
+                    position: absolute;
+                    top: 4em;
+                    left: 7.5%;
+                    padding-right: 7.5%;
+                    color: white;
+                    
+                    .section-noticia-encabezados__h3{
+                    font-weight: 500;
+                    font-size: 2.75rem;
+                    }
+                }
+            
+            }
+    
+            @media only screen and (max-width: 767px) {
+                
+                .section-noticia-encabezados{
+                    margin: 1em 0em 1em 0em;
+        
+                    .section-noticia-encabezados__h3{
+                        margin: 0.75em 0em 0.75em 0em;
+                    }
+        
+                }
+        
+            }
+    
+        }
+
+    }
+
+}
+
+.noticia-recientes-container{
+    margin-top: 2em;
+}
+
+@media only screen and (max-width: 991px) {
+                
+    .noticia-recientes-container{
+        display: none;
+    }
+
+}
+
+.noticia-recientes-carousel-container{
+    margin-top: 2em;
+
+    .section-carousel-noticias-container{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+                
+    .noticia-recientes-carousel-container{
+        display: none;
+    }
+
+}
+
+/* ************************ INICIO TURISMO ************************ */
+
+.section-turismo-container{
+    padding-top: 2em;
+
+    .section-turismo-div{
+        margin-bottom: 2em;
+    
+        .section-turismo-carousel{
+            width: 100%;
+    
+            .section-turismo-carousel__img{
+                width: 100%;
+            }
+        }
+    
+        .section-turismo-text{
+            margin-top: 2em;
+    
+            .section-turismo-text__ul{
+                list-style: none;
+                padding-left: 0px;
+            }
+    
+        }
+    
+    }
+
+}
+
+

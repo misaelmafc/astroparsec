@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="description" content="Noticias de astronomía y ciencia relacionada a la astrofísica">
+    <meta name="keywords"
+        content="astronomia, astronomia chile, telescopio, observatorio, turismo, turismo espacial, radiotelescopio, eclipse, ciencia, planetario">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/to-up.js"></script>
+    <script type="text/javascript" src="../../js/save-contact.js"></script>
+    <script type="text/javascript" src="../../js/text-area-length-contact.js"></script>
+    <script type="text/javascript" src="../../js/scroll-indicator.js"></script>
+    <title>Noticias | AstroParsec</title>
+</head>
+
+<body>
+    <div id="scrollIndicator">
+    </div>
+    <a href="javascript:void(0);" id="scroll-btn" class="scroll-btn">
+        <span class="scroll-btn__span"></span>
+    </a>
+
+    <div class="modal fade section-noticias-modal" id="modaLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" id="formLogin" action="../../php/entrada.php">
+                        <div class="form-group">
+                            <label for="userName">Nombre usuario</label>
+                            <input type="text" class="form-control" id="userName" required name="nombre"
+                                placeholder="Ejemplo: Misael">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required name="password"
+                                placeholder="Ingrese contraseña entregada">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-dark float-right">INICIAR SESIÓN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-container" style="background-color: #000000;">
+        <a class="navbar-brand nav-container__logoInicio" href="../../index.html">ASTRO-PARSEC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item  p-2">
+                    <a class="nav-link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="../galeria.html">Galería</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="../telescopios.html">Telescopios</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link active" href="../noticias.html">Noticias</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="../turismo.html">Turismo</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="modal" href="#modaLogin">
+                        <img class="nav-container__img" src="../../assets/login.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-container">
+
+        <div class="container">
+            <div class="row justify-content-center align-items-start">
+
+                <div
+                    class="row col-12 col-sm-12 col-md-12 col-lg-9 justify-content-center align-items-center noticia-container">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 section-noticia">
+                        <div class="section-noticias__link-back">
+                            <a href="../noticias.html">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                                </svg>
+                                Volver a noticias
+                            </a>
+                        </div>
+                        <div class="section-noticia-img-text">
+                            <img class="section-noticia-img-text__img" src="../../assets/noticias/noticia-1-a.jpg"
+                                alt="">
+                            <div class="section-noticia-encabezados">
+                                <h6>Astronomía</h6>
+                                <h3 class="section-noticia-encabezados__h3">La Nebulosa del Anillo Azul: resuelto un
+                                    misterio cósmico desde hace más de una década</h3>
+                                <h6>HOY 11:26</h6>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center align-items-center">
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">La misión Galex de la
+                                NASA, que durante diez años se dedicó a la observación de las galaxias desde el espacio,
+                                detectó en 2004 un objeto diferente a cualquier otro que se hubiera visto antes en la
+                                Vía Láctea: una gota grande y débil de gas con una estrella en su centro. En las
+                                imágenes del telescopio, la mancha parecía azul, aunque en realidad no emite luz visible
+                                para el ojo humano, y observaciones posteriores revelaron una estructura de anillo
+                                grueso dentro de ella. Así que el equipo la apodó la Nebulosa del Anillo Azul. Durante
+                                los siguientes 16 años, la estudiaron con múltiples telescopios terrestres y espaciales,
+                                pero cuanto más aprendían, más misteriosa parecía.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Ahora, un nuevo
+                                estudio publicado en la revista «Nature» puede haber resuelto el caso. Al aplicar
+                                modelos teóricos de vanguardia a la gran cantidad de datos que se han recopilado sobre
+                                este objeto, los autores sugieren que la nebulosa, una nube de gas en el espacio,
+                                probablemente esté compuesta por escombros de dos estrellas que colisionaron y se
+                                fusionaron en una sola.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Si bien se cree que
+                                los sistemas estelares fusionados son bastante comunes, es casi imposible estudiarlos
+                                inmediatamente después de su formación porque están oscurecidos por los escombros que
+                                provoca la colisión. Una vez que los escombros se han despejado, al menos cientos de
+                                miles de años después, son difíciles de identificar porque se asemejan a estrellas no
+                                fusionadas. La Nebulosa del Anillo Azul parece ser una especie de «eslabón perdido»,
+                                según explican los autores del estudio. Los astrónomos están viendo el sistema estelar
+                                solo unos pocos miles de años después de la fusión, cuando la evidencia de la unión
+                                todavía es abundante. Parece ser el primer ejemplo conocido de un sistema estelar
+                                fusionado en esta etapa.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Operado entre 2003 y
+                                2013 y administrado por el Laboratorio de Propulsión a Reaccion (JPL) de la NASA en el
+                                sur de California, Galex fue diseñado para censar las poblaciones de estrellas jóvenes
+                                en otras galaxias. Para hacer esto, la misión observaba tanto la luz ultravioleta
+                                cercana (longitudes de onda ligeramente más cortas que la luz visible) como la luz
+                                ultravioleta lejana. La mayoría de los objetos vistos por Galex irradiaban tanto UV
+                                cercano (representado en amarillo en sus imágenes) como UV lejano (representado en
+                                azul), pero la Nebulosa del Anillo Azul destacó porque solo emitía luz ultravioleta
+                                lejana.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">El tamaño del objeto
+                                era similar al de un remanente de supernova, que se forma cuando una estrella masiva se
+                                queda sin combustible y explota, o una nebulosa planetaria, los restos hinchados de una
+                                estrella del tamaño de nuestro Sol. Pero la Nebulosa del Anillo Azul tenía una estrella
+                                viviente en su centro.</P>
+                            <img class="img-fluid col-12 col-sm-11 col-md-9 col-lg-9 section-noticia__img"
+                                src="../../assets/noticias/noticia-1-b.jpg" alt="">
+                            <div class="section-noticia__h4 col-12 col-sm-11 col-md-9 col-lg-9">
+                                <h4>Planeta Fantasma</h4>
+                            </div>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">En 2006, el equipo
+                                observó la nebulosa con el telescopio Hale de 5,1 metros en el Observatorio Palomar en
+                                el condado de San Diego, California, y luego con los telescopios aún más potentes de 10
+                                metros en el Observatorio WM Keck en Hawái. Encontraron evidencias de una onda de choque
+                                en la nebulosa, lo que sugiere que el gas que la compone había sido efectivamente
+                                expulsado por algún tipo de evento violento alrededor de la estrella central. Los datos
+                                de Keck también indicaron que la estrella estaba tirando una gran cantidad de material
+                                hacia su superficie. Esto hizo que el equipo pensara durante bastante tiempo que tal vez
+                                había un planeta de varias veces la masa de Júpiter siendo desgarrado por la estrella.
+                            </P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">En 2012, utilizando
+                                el primer estudio de cielo completo del telescopio espacial WISE de la NASA, que estudia
+                                el cielo en luz infrarroja, los astrónomos identificaron un disco de polvo que orbita
+                                cerca de la estrella. Los datos de archivo de otros tres observatorios infrarrojos,
+                                incluido el espacial Spitzer de la NASA, también detectaron el disco. El hallazgo no
+                                descartó la posibilidad de que un planeta también estuviera orbitando la estrella, pero
+                                el equipo demostraría que el disco y el material expulsado al espacio provenían de algo
+                                más grande que incluso un planeta gigante. Luego, en 2017, el Buscador de Planetas de
+                                Zona Habitable en el Telescopio Hobby-Eberly en Texas confirmó que no había ningún
+                                objeto compacto orbitando la estrella.
+                            </P>
+                            <div class="section-noticia__h4 col-12 col-sm-11 col-md-9 col-lg-9">
+                                <h4>Se la tragó por completo</h4>
+                            </div>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Más de una década
+                                después de descubrir la Nebulosa del Anillo Azul, el equipo había recopilado una ingente
+                                cantidad de datos sobre el sistema, pero todavía se les escapaba una explicación de lo
+                                que había creado la nebulosa. La solución llegó de la mano de Brian Metzger, astrofísico
+                                teórico de la Universidad de Columbia que hace modelos matemáticos y computacionales de
+                                fenómenos cósmicos.
+                            </P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Con su ayuda, el
+                                equipo concluyó que la nebulosa era el producto de una fusión estelar relativamente
+                                reciente que probablemente ocurrió entre una estrella similar a nuestro Sol y otra
+                                estrella de solo una décima parte de ese tamaño (o aproximadamente 100 veces la masa de
+                                Júpiter). Casi al final de su vida, la estrella similar al Sol comenzó a hincharse,
+                                acercándose más a su compañera. Finalmente, la estrella más pequeña cayó en una espiral
+                                descendente hacia la más grande. En el camino, la más grande rompió a la más pequeña,
+                                envolviéndose en un anillo de escombros antes de tragársela por completo.
+                            </P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Este fue el evento
+                                violento que llevó a la formación de la Nebulosa del Anillo Azul. La fusión lanzó una
+                                nube de escombros calientes al espacio que fue cortada en dos por el disco de gas. Esto
+                                creó dos nubes de escombros en forma de cono. Sus bases se alejan de la estrella en
+                                direcciones opuestas y se ensanchan a medida que viajan hacia afuera. La base de un cono
+                                viene casi directamente hacia la Tierra y la otra va en la dirección opuesta. Son
+                                demasiado débiles para ser vistos, pero el área donde los conos se superponen (como se
+                                ve desde la Tierra) forma el anillo azul central observado por Galex.
+                            </P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Milenios después, la
+                                nube de escombros en expansión se enfrió y formó moléculas y polvo, incluidas moléculas
+                                de hidrógeno que colisionaron con el medio interestelar, la escasa colección de átomos y
+                                partículas energéticas que llenan el espacio entre las estrellas. Las colisiones
+                                excitaron las moléculas de hidrógeno, lo que hizo que se irradiaran en una longitud de
+                                onda específica de luz ultravioleta lejana. Con el tiempo, el resplandor se volvió lo
+                                suficientemente brillante para que Galex lo viera.
+                            </P>
+                            <div class="section-noticia__h4 col-12 col-sm-11 col-md-9 col-lg-9">
+                                <h4>Cosas nunca imaginadas</h4>
+                            </div>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Las fusiones
+                                estelares pueden ocurrir hasta una vez cada 10 años en nuestra galaxia, la Vía Láctea,
+                                lo que significa que es posible que una población considerable de las estrellas que
+                                vemos en el cielo hayan sido en realidad dos. «Vemos muchos sistemas de dos estrellas
+                                que podrían fusionarse algún día, y creemos que hemos identificado estrellas que se
+                                fusionaron hace quizás millones de años. Pero casi no tenemos datos sobre lo que sucede
+                                en el medio», dice Metzger. «Creemos que probablemente hay muchos restos jóvenes de
+                                fusiones estelares en nuestra galaxia, y la Nebulosa del Anillo Azul podría mostrarnos
+                                cómo se ven para que podamos identificar más».
+                            </P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Aunque esta es
+                                probablemente la conclusión de un misterio de hace 16 años, también puede ser el
+                                comienzo de un nuevo capítulo en el estudio de las fusiones estelares. «Es sorprendente
+                                que Galex haya podido encontrar este objeto realmente débil que no estábamos buscando,
+                                pero que resulta ser algo realmente interesante para los astrónomos», admite Mark
+                                Seibert, astrofísico de la Institución Carnegie para la Ciencia y miembro del equipo
+                                Galex. «Simplemente reitera que cuando miras el universo en una nueva longitud de onda o
+                                en una nueva forma, encuentras cosas que nunca imaginaste que encontraras».
+                            </P>
+                            <div class="section-noticia__link col-12 col-sm-11 col-md-9 col-lg-9">
+                                <a target="_blank"
+                                    href="https://www.abc.es/ciencia/abci-nebulosa-anillo-azul-resuelto-misterio-cosmico-desde-hace-mas-decada-202011192118_noticia.html">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-link-45deg"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z">
+                                        </path>
+                                        <path
+                                            d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z">
+                                        </path>
+                                    </svg>
+                                    Ver publicación original
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="noticia-9.html" tabindex="-1"
+                                        aria-disabled="true">Anterior</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="noticia-2.html">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 noticia-recientes-container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <h4>NOTICIAS RECIENTES</h4>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                    <h3 class="mb-0">Ingredientes de la vida </h3>
+                                    <div class="mb-1 text-muted">Ayer 22:40</div>
+                                    <p class="card-text mb-auto">Demuestran que los ingredientes de la vida son más
+                                        antiguos que
+                                        las estrellas y los planetas</p>
+                                    <a href="noticia-2.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Historia astronómica</strong>
+                                    <h3 class="mb-0">Astrónomo Mark Brown</h3>
+                                    <div class="mb-1 text-muted">Ayer 16:15</div>
+                                    <p class="card-text mb-auto">“El hombre que mató a Plutón” y
+                                        nos dejó con sólo 8 planetas</p>
+                                    <a href="noticia-3.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                    <h3 class="mb-0">Telescopio de Arecibo será demolido</h3>
+                                    <div class="mb-1 text-muted">Ayer 12:05</div>
+                                    <p class="card-text mb-auto">Radiotelescopio Arecibo en Puerto Rico será demolido
+                                        por riesgo
+                                        de colapso</p>
+                                    <a href="noticia-4.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                    <h3 class="mb-0">¿Cuánto mide el universo?</h3>
+                                    <div class="mb-1 text-muted">Ayer 10:10</div>
+                                    <p class="card-text mb-auto">El tamaño físicamente observable es de unos 93.000
+                                        millones de
+                                        años luz</p>
+                                    <a href="noticia-5.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                    <h3 class="mb-0">Cápsula de Space X</h3>
+                                    <div class="mb-1 text-muted">Ayer 08:45</div>
+                                    <p class="card-text mb-auto">Cápsula de Space X con su primera misión
+                                        operativa tripulada se acopla a la ISS</p>
+                                    <a href="noticia-6.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                    <h3 class="mb-0">La vida en Venus se tambalea</h3>
+                                    <div class="mb-1 text-muted">Ayer 07:20</div>
+                                    <p class="card-text mb-auto">Equipos ponen en duda la validez de la detección de
+                                        fosfina en
+                                        el planeta más cercano a la Tierra</p>
+                                    <a href="noticia-7.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                    <h3 class="mb-0">¿Cómo empezó el universo?</h3>
+                                    <div class="mb-1 text-muted">Ayer 06:00</div>
+                                    <p class="card-text mb-auto">Hay varias teorías y la del Big Bang es la que tiene el
+                                        mayor número de seguidores entre los astrónomos</p>
+                                    <a href="noticia-8.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                    <h3 class="mb-0">Descubren una galaxia fósil</h3>
+                                    <div class="mb-1 text-muted">Ayer 06:00</div>
+                                    <p class="card-text mb-auto">La detección fue realizada a través del llamado
+                                        Experimento de Evolución Galáctica del APOGEE.</p>
+                                    <a href="noticia-9.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="noticia-recientes-carousel-container">
+                    <section class="section-carousel-noticias-container">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner section-carousel-div">
+                                <div class="carousel-item active">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                                    <h3 class="mb-0">Ingredientes de la vida </h3>
+                                                    <div class="mb-1 text-muted">Ayer 22:40</div>
+                                                    <p class="card-text mb-auto">Demuestran que los ingredientes de la
+                                                        vida son más
+                                                        antiguos que
+                                                        las estrellas y los planetas</p>
+                                                    <a href="noticia-2.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Historia
+                                                        astronómica</strong>
+                                                    <h3 class="mb-0">Astrónomo Mark Brown</h3>
+                                                    <div class="mb-1 text-muted">Ayer 16:15</div>
+                                                    <p class="card-text mb-auto">“El hombre que mató a Plutón” y
+                                                        nos dejó con sólo 8 planetas</p>
+                                                    <a href="noticia-3.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                                    <h3 class="mb-0">Telescopio de Arecibo será demolido</h3>
+                                                    <div class="mb-1 text-muted">Ayer 12:05</div>
+                                                    <p class="card-text mb-auto">Radiotelescopio Arecibo en Puerto Rico
+                                                        será demolido
+                                                        por riesgo
+                                                        de colapso</p>
+                                                    <a href="noticia-4.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                                    <h3 class="mb-0">¿Cuánto mide el universo?</h3>
+                                                    <div class="mb-1 text-muted">Ayer 10:10</div>
+                                                    <p class="card-text mb-auto">El tamaño físicamente observable es de
+                                                        unos 93.000
+                                                        millones de
+                                                        años luz</p>
+                                                    <a href="noticia-5.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                                    <h3 class="mb-0">Cápsula de Space X</h3>
+                                                    <div class="mb-1 text-muted">Ayer 08:45</div>
+                                                    <p class="card-text mb-auto">Cápsula de Space X con su primera
+                                                        misión
+                                                        operativa tripulada se acopla a la ISS</p>
+                                                    <a href="noticia-6.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                                    <h3 class="mb-0">La vida en Venus se tambalea</h3>
+                                                    <div class="mb-1 text-muted">Ayer 07:20</div>
+                                                    <p class="card-text mb-auto">Equipos ponen en duda la validez de la
+                                                        detección de
+                                                        fosfina en
+                                                        el planeta más cercano a la Tierra</p>
+                                                    <a href="noticia-7.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                                    <h3 class="mb-0">¿Cómo empezó el universo?</h3>
+                                                    <div class="mb-1 text-muted">Ayer 06:00</div>
+                                                    <p class="card-text mb-auto">Hay varias teorías y la del Big Bang es
+                                                        la que tiene el
+                                                        mayor número de seguidores entre los astrónomos</p>
+                                                    <a href="noticia-8.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                                    <h3 class="mb-0">Descubren una galaxia fósil</h3>
+                                                    <div class="mb-1 text-muted">Ayer 06:00</div>
+                                                    <p class="card-text mb-auto">La detección fue realizada a través del
+                                                        llamado
+                                                        Experimento de Evolución Galáctica del APOGEE.</p>
+                                                    <a href="noticia-9.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer-container">
+        <div class="container">
+            <div class="row justify-content-center align-items-start">
+
+                <div id="alertaExito" class="alert alert-success alert-dismissible fade show footer-section__alert"
+                    role="alert">
+                    <strong>¡Mensaje enviado correctamente!</strong> Nos contactaremos contigo a la brevedad
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="alertaError" class="alert alert-danger alert-dismissible fade show footer-section__alert"
+                    role="alert">
+                    <strong>¡Ups, ha ocurrido un problema al enviar el mensaje!</strong> Intenta reenviar el mensaje o
+                    probar en otro momento,
+                    o escríbenos al email info@astroparsec.cl
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="footer-section col-12 col-sm-10 col-md-6 col-lg-4">
+
+                    <form id="formulario" action="../../php/save-contact.php" method="post">
+                        <h6 class="footer-section__title">CONTACTO</h6>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="nombre">Nombre</label>
+                            <input type="text" class="form-control footer-section__shadow-color" name="nombre"
+                                aria-describedby="emailHelp" placeholder="Ingrese su nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="email">Email</label>
+                            <input type="email" class="form-control footer-section__shadow-color" name="email"
+                                aria-describedby="emailHelp" placeholder="Ejemplo: info@astroparsec.cl" required>
+                            <small id="emailHelp" class="form-text text-muted footer-section__small">Nunca compartiremos
+                                su correo electrónico con terceros.</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="mensaje">Mensaje</label>
+                            <textarea class="form-control footer-section__shadow-color" name="mensaje" rows="4"
+                                id="textAreaFormContact" aria-describedby="textAreaLength" required
+                                maxlength="500"></textarea>
+                            <small id="textAreaLength" class="float-right form-text text-muted footer-section__small"
+                                style="display: none;"></small>
+                        </div>
+                        <button id="btnEnviar" type="submit"
+                            class="btn btn-block footer-section__submit">ENVIAR</button>
+                    </form>
+
+                </div>
+
+                <div class="row col-12 col-sm-10 col-md-6 col-lg-3">
+
+                    <div class="footer-section col-6 col-sm-6 col-md-12 col-lg-12">
+                        <h6 class="footer-section__title">ASTRONOMÍA CHILE</h6>
+                        <p>Dirección: Aillavilú 1030, Santiago, Chile</p>
+                        <p>Teléfono: +56 22 1234 567</p>
+                        <p>email: info@astrochile.cl</p>
+                    </div>
+
+                    <div class="footer-section col-6 col-sm-6 col-md-12 col-lg-12">
+                        <h6 class="footer-section__title">REDES SOCIALES</h6>
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <a class="footer-section__a" href="https://www.instagram.com/"><img
+                                        class="footer-section__img" src="../../assets/instagram.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-9 col-lg-9">
+                                <a class="footer-section__a" href="https://www.youtube.com/"><img
+                                        class="footer-section__img" src="../../assets/youtube.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <a class="footer-section__a" href="https://twitter.com/?lang=es"><img
+                                        class="footer-section__img" src="../../assets/twitter.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-9 col-lg-9">
+                                <a class="footer-section__a" href="https://www.facebook.com/"><img
+                                        class="footer-section__img" src="../../assets/facebook.png" alt="icno"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="footer-section col-12 col-sm-10 col-md-12 col-lg-5">
+                    <h6 class="footer-section__title">LOCALIZACIÓN</h6>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1664.8067384058488!2d-70.65401422755211!3d-33.433320119175356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5bb71870217%3A0x19c7f487465d861f!2sAillavil%C3%BA%201037-1085%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1601862416535!5m2!1ses!2scl"
+                        width="100%" height="330" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="row justify-content-center align-items-start col-12 col-sm-10 col-md-12 col-lg-12">
+                    <div class="footer-section__credits">
+                        <p>AstroParsec © All rights reserved | Misael Faúndez</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

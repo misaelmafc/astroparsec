@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="description" content="Noticias de astronomía y ciencia relacionada a la astrofísica">
+    <meta name="keywords"
+        content="astronomia, astronomia chile, telescopio, observatorio, turismo, turismo espacial, radiotelescopio, eclipse, ciencia, planetario">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../../js/to-up.js"></script>
+    <script type="text/javascript" src="../../js/save-contact.js"></script>
+    <script type="text/javascript" src="../../js/text-area-length-contact.js"></script>
+    <script type="text/javascript" src="../../js/scroll-indicator.js"></script>
+    <title>Noticias | AstroParsec</title>
+</head>
+
+<body>
+    <div id="scrollIndicator">
+    </div>
+    <a href="javascript:void(0);" id="scroll-btn" class="scroll-btn">
+        <span class="scroll-btn__span"></span>
+    </a>
+
+    <div class="modal fade section-noticias-modal" id="modaLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" id="formLogin" action="../../php/entrada.php">
+                        <div class="form-group">
+                            <label for="userName">Nombre usuario</label>
+                            <input type="text" class="form-control" id="userName" required name="nombre"
+                                placeholder="Ejemplo: Misael">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required name="password"
+                                placeholder="Ingrese contraseña entregada">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-dark float-right">INICIAR SESIÓN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-container" style="background-color: #000000;">
+        <a class="navbar-brand nav-container__logoInicio" href="../../index.html">ASTRO-PARSEC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item  p-2">
+                    <a class="nav-link" href="../../index.html">Inicio</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="../galeria.html">Galería</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="../telescopios.html">Telescopios</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link active" href="../noticias.html">Noticias</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="../turismo.html">Turismo</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="modal" href="#modaLogin">
+                        <img class="nav-container__img" src="../../assets/login.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-container">
+
+        <div class="container">
+            <div class="row justify-content-center align-items-start">
+
+                <div
+                    class="row col-12 col-sm-12 col-md-12 col-lg-9 justify-content-center align-items-center noticia-container">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 section-noticia">
+                        <div class="section-noticias__link-back">
+                            <a href="../noticias.html">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                                </svg>
+                                Volver a noticias
+                            </a>
+                        </div>
+                        <div class="section-noticia-img-text">
+                            <img class="section-noticia-img-text__img" src="../../assets/noticias/noticia-9-a.jpg"
+                                alt="">
+                            <div class="section-noticia-encabezados">
+                                <h6>Ciencia</h6>
+                                <h3 class="section-noticia-encabezados__h3">Descubren una galaxia fósil escondida en las
+                                    profundidades de la Vía Láctea</h3>
+                                <h6>AYER 06:00</h6>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center align-items-center">
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">El hallazgo de una
+                                “galaxia fósil” escondida en las profundidades de nuestra propia Vía Láctea, puede
+                                alterar nuestra comprensión de cómo se convirtió en la galaxia que vemos hoy. El
+                                descubrimiento del Experimento de Evolución Galáctica del Observatorio Apache Point
+                                (APOGEE) de Sloan Digital Sky Surveys, ha sido publicado en Monthly Notices of the Royal
+                                Astronomical Society.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Esta galaxia fósil
+                                puede haber chocado con la Vía Láctea hace 10.000 millones de años, cuando nuestra
+                                galaxia aún estaba en su infancia. Los astrónomos la han llamado Heracles, en honor al
+                                antiguo héroe griego que recibió el don de la inmortalidad cuando se creó la Vía Láctea.
+                                Los restos de Heracles representan aproximadamente un tercio del halo esférico de la Vía
+                                Láctea. Pero si las estrellas y el gas de Heracles constituyen un porcentaje tan grande
+                                del halo galáctico, ¿por qué no la vimos antes? La respuesta está en su ubicación en las
+                                profundidades de la Vía Láctea.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">“Para encontrar una
+                                galaxia fósil como esta, tuvimos que observar la composición química detallada y los
+                                movimientos de decenas de miles de estrellas”, dice en un comunicado Ricardo Schiavon de
+                                la Universidad John Moores de Liverpool (LJMU) en el Reino Unido, un miembro clave del
+                                equipo de investigación. “Eso es especialmente difícil de hacer para las estrellas en el
+                                centro de la Vía Láctea, porque están ocultas a la vista por nubes de polvo
+                                interestelar. APOGEE nos permite atravesar ese polvo y ver más profundamente que nunca
+                                en el corazón de la Vía Láctea”.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">APOGEE hace esto
+                                tomando espectros de estrellas en luz infrarroja cercana, en lugar de luz visible, que
+                                queda oscurecida por el polvo. Durante sus diez años de labores de observación, APOGEE
+                                ha medido los espectros de más de medio millón de estrellas en toda la Vía Láctea,
+                                incluido su núcleo previamente oscurecido por el polvo.</P>
+                            <div class="section-noticia__h4 col-12 col-sm-11 col-md-9 col-lg-9">
+                                <h4>Como agujas en un pajar</h4>
+                            </div>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">El estudiante de
+                                posgrado Danny Horta de LJMU, autor principal del artículo que anuncia el resultado,
+                                explica que “es necesario examinar una cantidad tan grande de estrellas para encontrar
+                                estrellas inusuales en el corazón densamente poblado de la Vía Láctea, que es como
+                                encontrar agujas en un pajar”. Para separar las estrellas pertenecientes a Heracles de
+                                las de la Vía Láctea original, el equipo utilizó tanto las composiciones químicas como
+                                las velocidades de las estrellas medidas por el instrumento APOGEE.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">“De las decenas de
+                                miles de estrellas que observamos, unos pocos cientos tenían composiciones químicas y
+                                velocidades sorprendentemente diferentes”, dijo Horta. “Estas estrellas son tan
+                                diferentes que sólo podrían haber venido de otra galaxia. Al estudiarlas en detalle,
+                                podríamos rastrear la ubicación precisa y la historia de esta galaxia fósil”.</P>
+                            <img class="img-fluid col-12 col-sm-11 col-md-9 col-lg-9 section-noticia__img"
+                                src="../../assets/noticias/noticia-9-b.jpg" alt="">
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Debido a que las
+                                galaxias se construyen a través de fusiones de galaxias más pequeñas a lo largo del
+                                tiempo, los remanentes de galaxias más antiguas a menudo se ven en el halo exterior de
+                                la Vía Láctea, una enorme pero muy escasa nube de estrellas que envuelve la galaxia
+                                principal. Pero dado que nuestra galaxia se construyó de adentro hacia afuera, encontrar
+                                las primeras fusiones requiere mirar las partes más centrales del halo de la Vía Láctea,
+                                que están enterradas profundamente dentro del disco y se abultan.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Las estrellas que
+                                originalmente pertenecían a Heracles representan aproximadamente un tercio de la masa de
+                                todo el halo de la Vía Láctea en la actualidad, lo que significa que esta antigua
+                                colisión recién descubierta debe haber sido un evento importante en la historia de
+                                nuestra galaxia. Eso sugiere que nuestra galaxia puede ser inusual, ya que la mayoría de
+                                las galaxias espirales masivas similares tuvieron vidas tempranas mucho más tranquilas.
+                                “Como nuestro hogar cósmico, la Vía Láctea ya es especial para nosotros, pero esta
+                                antigua galaxia enterrada en su interior la hace aún más especial”, dice Schiavon.</P>
+                            <P class="section-noticia__parrafo col-12 col-sm-11 col-md-9 col-lg-9">Karen Masters,
+                                portavoz de SDSS-IV comenta: “APOGEE es una de las encuestas emblemáticas de la cuarta
+                                fase de SDSS, y este resultado es un ejemplo de la ciencia asombrosa que cualquiera
+                                puede hacer, ahora que casi hemos completado nuestros diez años de misión”.
+
+                                Y esta nueva era de descubrimientos no terminará con la finalización de las
+                                observaciones APOGEE. La quinta fase del SDSS ya ha comenzado a tomar datos, y su ‘Milky
+                                Way Mapper’ se basará en el éxito de APOGEE para medir espectros de diez veces más
+                                estrellas en todas las partes de la Vía Láctea, utilizando luz infrarroja cercana,
+                                visible luz y, a veces, ambas.</P>
+                            <div class="section-noticia__link col-12 col-sm-11 col-md-9 col-lg-9">
+                                <a target="_blank"
+                                    href="https://www.latercera.com/que-pasa/noticia/descubren-una-galaxia-fosil-escondida-en-las-profundidades-de-la-via-lactea/AKDYE4MWCBEF5ANJJYM3KQPDQ4/">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-link-45deg"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M4.715 6.542L3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.001 1.001 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z">
+                                        </path>
+                                        <path
+                                            d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 0 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 0 0-4.243-4.243L6.586 4.672z">
+                                        </path>
+                                    </svg>
+                                    Ver publicación original
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <nav aria-label="...">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="noticia-8.html" tabindex="-1"
+                                        aria-disabled="true">Anterior</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="noticia-1.html">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-3 noticia-recientes-container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <h4>NOTICIAS RECIENTES</h4>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                    <h3 class="mb-0">La Nebulosa del Anillo Azul</h3>
+                                    <div class="mb-1 text-muted">Hoy 11:26</div>
+                                    <p class="card-text mb-auto">Resuelto un misterio cósmico desde hace más de una
+                                        década</p>
+                                    <a href="noticia-1.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                    <h3 class="mb-0">Ingredientes de la vida </h3>
+                                    <div class="mb-1 text-muted">Ayer 22:40</div>
+                                    <p class="card-text mb-auto">Demuestran que los ingredientes de la vida son más
+                                        antiguos que
+                                        las estrellas y los planetas</p>
+                                    <a href="noticia-2.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Historia astronómica</strong>
+                                    <h3 class="mb-0">Astrónomo Mark Brown</h3>
+                                    <div class="mb-1 text-muted">Ayer 16:15</div>
+                                    <p class="card-text mb-auto">“El hombre que mató a Plutón” y
+                                        nos dejó con sólo 8 planetas</p>
+                                    <a href="noticia-3.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                    <h3 class="mb-0">Telescopio de Arecibo será demolido</h3>
+                                    <div class="mb-1 text-muted">Ayer 12:05</div>
+                                    <p class="card-text mb-auto">Radiotelescopio Arecibo en Puerto Rico será demolido
+                                        por riesgo
+                                        de colapso</p>
+                                    <a href="noticia-4.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                    <h3 class="mb-0">¿Cuánto mide el universo?</h3>
+                                    <div class="mb-1 text-muted">Ayer 10:10</div>
+                                    <p class="card-text mb-auto">El tamaño físicamente observable es de unos 93.000
+                                        millones de
+                                        años luz</p>
+                                    <a href="noticia-5.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                    <h3 class="mb-0">Cápsula de Space X</h3>
+                                    <div class="mb-1 text-muted">Ayer 08:45</div>
+                                    <p class="card-text mb-auto">Cápsula de Space X con su primera misión
+                                        operativa tripulada se acopla a la ISS</p>
+                                    <a href="noticia-6.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                    <h3 class="mb-0">La vida en Venus se tambalea</h3>
+                                    <div class="mb-1 text-muted">Ayer 07:20</div>
+                                    <p class="card-text mb-auto">Equipos ponen en duda la validez de la detección de
+                                        fosfina en
+                                        el planeta más cercano a la Tierra</p>
+                                    <a href="noticia-7.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div
+                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                <div class="col p-4 d-flex flex-column position-static">
+                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                    <h3 class="mb-0">¿Cómo empezó el universo?</h3>
+                                    <div class="mb-1 text-muted">Ayer 06:00</div>
+                                    <p class="card-text mb-auto">Hay varias teorías y la del Big Bang es la que tiene el
+                                        mayor número de seguidores entre los astrónomos</p>
+                                    <a href="noticia-8.html" class="stretched-link">Continuar leyendo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="noticia-recientes-carousel-container">
+                    <section class="section-carousel-noticias-container">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner section-carousel-div">
+                                <div class="carousel-item active">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                                    <h3 class="mb-0">Ingredientes de la vida </h3>
+                                                    <div class="mb-1 text-muted">Ayer 22:40</div>
+                                                    <p class="card-text mb-auto">Demuestran que los ingredientes de la
+                                                        vida son más
+                                                        antiguos que
+                                                        las estrellas y los planetas</p>
+                                                    <a href="noticia-2.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Historia
+                                                        astronómica</strong>
+                                                    <h3 class="mb-0">Astrónomo Mark Brown</h3>
+                                                    <div class="mb-1 text-muted">Ayer 16:15</div>
+                                                    <p class="card-text mb-auto">“El hombre que mató a Plutón” y
+                                                        nos dejó con sólo 8 planetas</p>
+                                                    <a href="noticia-3.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                                    <h3 class="mb-0">Telescopio de Arecibo será demolido</h3>
+                                                    <div class="mb-1 text-muted">Ayer 12:05</div>
+                                                    <p class="card-text mb-auto">Radiotelescopio Arecibo en Puerto Rico
+                                                        será demolido
+                                                        por riesgo
+                                                        de colapso</p>
+                                                    <a href="noticia-4.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                                    <h3 class="mb-0">¿Cuánto mide el universo?</h3>
+                                                    <div class="mb-1 text-muted">Ayer 10:10</div>
+                                                    <p class="card-text mb-auto">El tamaño físicamente observable es de
+                                                        unos 93.000
+                                                        millones de
+                                                        años luz</p>
+                                                    <a href="noticia-5.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Actualidad</strong>
+                                                    <h3 class="mb-0">Cápsula de Space X</h3>
+                                                    <div class="mb-1 text-muted">Ayer 08:45</div>
+                                                    <p class="card-text mb-auto">Cápsula de Space X con su primera
+                                                        misión
+                                                        operativa tripulada se acopla a la ISS</p>
+                                                    <a href="noticia-6.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Ciencia</strong>
+                                                    <h3 class="mb-0">La vida en Venus se tambalea</h3>
+                                                    <div class="mb-1 text-muted">Ayer 07:20</div>
+                                                    <p class="card-text mb-auto">Equipos ponen en duda la validez de la
+                                                        detección de
+                                                        fosfina en
+                                                        el planeta más cercano a la Tierra</p>
+                                                    <a href="noticia-7.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row justify-content-center">
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                                    <h3 class="mb-0">¿Cómo empezó el universo?</h3>
+                                                    <div class="mb-1 text-muted">Ayer 06:00</div>
+                                                    <p class="card-text mb-auto">Hay varias teorías y la del Big Bang es
+                                                        la que tiene el
+                                                        mayor número de seguidores entre los astrónomos</p>
+                                                    <a href="noticia-8.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-10 col-sm-10 col-md-6">
+                                            <div
+                                                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                                                <div class="col p-4 d-flex flex-column position-static">
+                                                    <strong class="d-inline-block mb-2 text-primary">Astronomía</strong>
+                                                    <h3 class="mb-0">La Nebulosa del Anillo Azul</h3>
+                                                    <div class="mb-1 text-muted">Hoy 11:26</div>
+                                                    <p class="card-text mb-auto">Resuelto un misterio cósmico desde hace
+                                                        más de una
+                                                        década</p>
+                                                    <a href="noticia-1.html" class="stretched-link">Continuar
+                                                        leyendo</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer-container">
+        <div class="container">
+            <div class="row justify-content-center align-items-start">
+
+                <div id="alertaExito" class="alert alert-success alert-dismissible fade show footer-section__alert"
+                    role="alert">
+                    <strong>¡Mensaje enviado correctamente!</strong> Nos contactaremos contigo a la brevedad
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="alertaError" class="alert alert-danger alert-dismissible fade show footer-section__alert"
+                    role="alert">
+                    <strong>¡Ups, ha ocurrido un problema al enviar el mensaje!</strong> Intenta reenviar el mensaje o
+                    probar en otro momento,
+                    o escríbenos al email info@astroparsec.cl
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="footer-section col-12 col-sm-10 col-md-6 col-lg-4">
+
+                    <form id="formulario" action="../../php/save-contact.php" method="post">
+                        <h6 class="footer-section__title">CONTACTO</h6>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="nombre">Nombre</label>
+                            <input type="text" class="form-control footer-section__shadow-color" name="nombre"
+                                aria-describedby="emailHelp" placeholder="Ingrese su nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="email">Email</label>
+                            <input type="email" class="form-control footer-section__shadow-color" name="email"
+                                aria-describedby="emailHelp" placeholder="Ejemplo: info@astroparsec.cl" required>
+                            <small id="emailHelp" class="form-text text-muted footer-section__small">Nunca compartiremos
+                                su correo electrónico con terceros.</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="mensaje">Mensaje</label>
+                            <textarea class="form-control footer-section__shadow-color" name="mensaje" rows="4"
+                                id="textAreaFormContact" aria-describedby="textAreaLength" required
+                                maxlength="500"></textarea>
+                            <small id="textAreaLength" class="float-right form-text text-muted footer-section__small"
+                                style="display: none;"></small>
+                        </div>
+                        <button id="btnEnviar" type="submit"
+                            class="btn btn-block footer-section__submit">ENVIAR</button>
+                    </form>
+
+                </div>
+
+                <div class="row col-12 col-sm-10 col-md-6 col-lg-3">
+
+                    <div class="footer-section col-6 col-sm-6 col-md-12 col-lg-12">
+                        <h6 class="footer-section__title">ASTRONOMÍA CHILE</h6>
+                        <p>Dirección: Aillavilú 1030, Santiago, Chile</p>
+                        <p>Teléfono: +56 22 1234 567</p>
+                        <p>email: info@astrochile.cl</p>
+                    </div>
+
+                    <div class="footer-section col-6 col-sm-6 col-md-12 col-lg-12">
+                        <h6 class="footer-section__title">REDES SOCIALES</h6>
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <a class="footer-section__a" href="https://www.instagram.com/"><img
+                                        class="footer-section__img" src="../../assets/instagram.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-9 col-lg-9">
+                                <a class="footer-section__a" href="https://www.youtube.com/"><img
+                                        class="footer-section__img" src="../../assets/youtube.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <a class="footer-section__a" href="https://twitter.com/?lang=es"><img
+                                        class="footer-section__img" src="../../assets/twitter.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-9 col-lg-9">
+                                <a class="footer-section__a" href="https://www.facebook.com/"><img
+                                        class="footer-section__img" src="../../assets/facebook.png" alt="icno"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="footer-section col-12 col-sm-10 col-md-12 col-lg-5">
+                    <h6 class="footer-section__title">LOCALIZACIÓN</h6>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1664.8067384058488!2d-70.65401422755211!3d-33.433320119175356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5bb71870217%3A0x19c7f487465d861f!2sAillavil%C3%BA%201037-1085%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1601862416535!5m2!1ses!2scl"
+                        width="100%" height="330" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="row justify-content-center align-items-start col-12 col-sm-10 col-md-12 col-lg-12">
+                    <div class="footer-section__credits">
+                        <p>AstroParsec © All rights reserved | Misael Faúndez</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

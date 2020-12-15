@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="description" content="Página información astronomica y turismo espacial en Chile y el mundo">
+    <meta name="keywords" content="astronomia, astronomia chile, telescopio, observatorio, turismo, turismo espacial, 
+    radiotelescopio, eclipse, ciencia, planetario">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Inicio | AstroParsec</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/to-up.js"></script>
+    <script type="text/javascript" src="js/save-contact.js"></script>
+    <script type="text/javascript" src="js/text-area-length-contact.js"></script>
+    <script type="text/javascript" src="js/scroll-indicator.js"></script>
+    <script type="text/javascript" src="js/time-line.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+</head>
+
+<body>
+
+    <div id="scrollIndicator">
+    </div>
+    <a href="javascript:void(0);" id="scroll-btn" class="scroll-btn">
+        <span class="scroll-btn__span"></span>
+    </a>
+
+    <div class="modal fade section-noticias-modal" id="modaLogin" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Iniciar sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" id="formLogin" action="php/entrada.php">
+                        <div class="form-group">
+                            <label for="userName">Nombre usuario</label>
+                            <input type="text" class="form-control" id="userName" required name="nombre"
+                                placeholder="Ejemplo: Misael">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required name="password"
+                                placeholder="Ingrese contraseña entregada">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-dark float-right">INICIAR SESIÓN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-container" style="background-color: #000000;">
+        <a class="navbar-brand nav-container__logoInicio" href="index.html">ASTRO-PARSEC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item  p-2">
+                    <a class="nav-link active" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="pages/galeria.html">Galería</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="pages/telescopios.html">Telescopios</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="pages/noticias.html">Noticias</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" href="pages/turismo.html">Turismo</a>
+                </li>
+                <li class="nav-item p-2">
+                    <a class="nav-link" data-toggle="modal" href="#modaLogin">
+                        <img class="nav-container__img" src="assets/login.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section-carousel-container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner section-carousel-div">
+                <div class="carousel-item active">
+                    <img class="section-carousel-div__img" src="assets/img-00.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img class="section-carousel-div__img" src="assets/img-01.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img class="section-carousel-div__img" src="assets/img-02.jpg" class="d-block w-100" alt="...">
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="timeline-container" id="timeline-1">
+            <div class="timeline-header">
+                <h2 class="timeline-header__title">Línea de tiempo de la astronomía</h2>
+                <h3 class="timeline-header__subtitle">Desde los inicios hasta nuestros tiempos</h3>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item" data-text="LA CULTURA EGIPCIA">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="assets/time-line/cultura-egipcia.jpg" />
+                        <h2 class="timeline__content-title">3150-1075 a.C</h2>
+                        <p class="timeline__content-desc">Egipto gozó de gran prestigio su alto nivel y la amplitud de
+                            conocimientos. La tradición dice que hombres sabios de la antigua Grecia iban a aprender
+                            a Egipto, donde existía una ciencia venerable y un elevado nivel de conocimientos
+                            científicos. El calendario egipcio tenía tres estaciones de cuatro meses cada una,
+                            Inundación o
+                            Akhet, invierno o Peret, "salida" de las tierras fuera del agua, verano o Shemú,"falta de
+                            agua".</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="LA CULTURA CHINA">
+                    <div class="timeline__content"><img class="timeline__img"
+                            src="assets/time-line/cultura-china.jpg" />
+                        <h2 class="timeline__content-title">1046-256 a.C</h2>
+                        <p class="timeline__content-desc">Se sabe que la Astronomía China es más antigua que la
+                            astronomía occidental y que, por estar tan alejada de ella, tuvo un desarrollo
+                            totalmente independiente. La antigua astronomía estelar china difiere mucho de la babilónica
+                            y de la occidental.
+                            El ecuador celeste se dividía en 28 «casas» y el número de constelaciones ascendía al
+                            final a 284.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="EUDOXIO DE CNIDOS">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/eudoxio.jpg" />
+                        <h2 class="timeline__content-title">408-355 a.C</h2>
+                        <p class="timeline__content-desc">Fue matemático y astrónomo griego discípulo de Platón, el
+                            primer Astrónomo que estableció que la duración del año era mayor en 6 horas a los 365
+                            días. Fundó una escuela de Filosofía, Matemáticas y Astronomía. Escribió su primer libro
+                            "Fenómenos", donde describe la salida y ocultación de los
+                            astros. En su segundo libro "Las Velocidades", explicó el movimiento del Sol, la Luna y los
+                            Planetas e introduce un sistema en el que asigna 4 esferas a cada astro para explicar
+                            sus movimientos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="ARISTÓTELES">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/aristoteles.jpg" />
+                        <h2 class="timeline__content-title">384-322 a.C</h2>
+                        <p class="timeline__content-desc">En astronomía, Aristóteles propuso la existencia de un
+                            Cosmos esférico y finito que tendría a la Tierra como centro (geocentrismo).
+                            Propugnaba que la tierra se hallaba inmóvil en el centro del universo y que los astros
+                            se movían en círculos alrededor de ella. Creyó que más allá de la esfera de las
+                            estrellas se encontraba un "Primer Motor", que lo había puesto todo en movimiento.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="ARISTARCO DE SAMOS">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/aristarco.jpg" />
+                        <h2 class="timeline__content-title">310-220 a.C</h2>
+                        <p class="timeline__content-desc">Calculó que la Tierra se encuentra unas 18 veces más
+                            distante del Sol. Perfeccionó la teoría de la rotación de la Tierra sobre su propio eje,
+                            explicó el ciclo de las estaciones, realizó nuevas y más precisas mediciones del año
+                            trópico. Formuló, por primera vez, una teoría heliocéntrica completa, su modelo
+                            heliocéntrico (que no tuvo seguidores en su época, ya que la concepción geocéntrica era
+                            hegemónica) encontró mayor precisión y detalle en el sistema de Copérnico más tarde en
+                            el año 1500.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="HIPARCO DE NICEA">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/hiparco.jpg" />
+                        <h2 class="timeline__content-title">190-120 a.C</h2>
+                        <p class="timeline__content-desc">Se le considera el primer astrónomo científico. Conocido
+                            como Hiparco de Rodas, fue un matemático y astrónomo griego, el más importante de su
+                            época. Realizo cálculos del año tropical, la duración del año determinada por las
+                            estaciones,
+                            estas tenían un margen de error de solo 6 minutos y medio con respecto a las mediciones
+                            modernas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="NICOLÁS COPERNICO">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/copernico.jpg" />
+                        <h2 class="timeline__content-title">1477-1543 d.C</h2>
+                        <p class="timeline__content-desc">Los aportes de Copérnico a la astronomía significaron una
+                            revolución científica, afirmaba que la Tierra y los planetas giran alrededor de un Sol
+                            estacionario y que está al centro del Sistema Solar. El afirmaba que el Sol estaba en el
+                            centro del Universo y la Tierra, completaba cada año
+                            una vuelta alrededor de él.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="GALILEO GALILEI">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/galileo.jpg" />
+                        <h2 class="timeline__content-title">1564-1642 d.C</h2>
+                        <p class="timeline__content-desc">Perfeccionó el telescopio, parte fundamental de todos sus
+                            descubrimientos, confirmo la teoría heliocéntrica planteada por Copérnico. Pudo observar los
+                            4 satélites de Júpiter llamados “astros mediceos” y comprobar que
+                            giraban en torno a Júpiter y no alrededor de la tierra como se creía y se formulaba en
+                            la época, que todos los astros giraban alrededor de la tierra. Pudo observar las montañas y
+                            valles de la luna, demostrando que la superficie lunar no
+                            era llana, como afirmaban los aristotélicos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="JOHANNES KEPLER">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/kepler.jpg" />
+                        <h2 class="timeline__content-title">1571-1630 d.C</h2>
+                        <p class="timeline__content-desc">Kepler aceptó la teoría de Copérnico al creer que el
+                            ordenamiento planetario era un plan de Dios. Una de sus obras más importantes fue Astronomía
+                            Nova (1609), donde calcula la órbita de
+                            Marte. Además contiene sus leyes sobre el movimiento planetario. En la primera ley, los
+                            planetas giran en órbitas elípticas con el Sol en uno de los focos. En la segunda ley,
+                            afirma que una línea imaginaria desde el Sol a un planeta recorre
+                            áreas iguales de una elipse durante intervalos iguales de tiempo.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="ISAAC NEWTON">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/newton.jpg" />
+                        <h2 class="timeline__content-title">1643-1727 d.C</h2>
+                        <p class="timeline__content-desc">Newton se dedicó a aplicar la predicción de la posición
+                            exacta de los cuerpos celestes, convirtiéndose en el mayor astrónomo del siglo.
+                            Descubrió que la fuerza de atracción entre la Tierra y la Luna es directamente
+                            proporcional al producto de sus masas e inversamente proporcional al cuadrado de la
+                            distancia que las separa, calculo dicha fuerza con el producto de ese cociente por una
+                            constante G; al extender el principio a todos los cuerpos del universo obtuvo la "Ley de
+                            gravitación universal".</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="ALBERT EINSTEIN">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/einstein.jpg" />
+                        <h2 class="timeline__content-title">1879-1955 d.C</h2>
+                        <p class="timeline__content-desc">La estructura del espacio y del tiempo, que él consideraba
+                            como un "tejido" o una "fibra", revolucionaron la Física y la Astronomía. El espacio no
+                            es ajeno a la presencia de estrellas y galaxias, y se deforma como si fuera una malla
+                            elástica cuando nota que hay cuerpos en su presencia.
+                            La estructura del universo, el comportamiento de la luz, la materia cerca de objetos
+                            compactos, Ej: estrellas de neutrones, agujeros negros, no se entienden sin la teoría de
+                            la relatividad.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="EDWIN POWELL HUBBLE">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/hubble.jpeg" />
+                        <h2 class="timeline__content-title">1889-1953 d.C</h2>
+                        <p class="timeline__content-desc">Astrónomo y cosmólogo, descubrió la expansión del universo y
+                            estimo su tamaño y edad. En 1923 descubrió las estrellas individuales.En 1929 Hubble
+                            comparó las distancias que había calculado para diferentes galaxias con los
+                            desplazamientos hacia el rojo fijados por Slipher para las mismas galaxias. Descubrió
+                            que cuanto más lejos estaba la galaxia, más alta era su velocidad de recesión. Hubble
+                            introdujo un sistema de clasificación de las Galaxias según su estructura.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-text="STEPHEN HAWKING">
+                    <div class="timeline__content"><img class="timeline__img" src="assets/time-line/hawking.jpg" />
+                        <h2 class="timeline__content-title">1942-2018 d.C</h2>
+                        <p class="timeline__content-desc">Trabajo las leyes básicas que gobiernan el Universo. Junto
+                            con Roger Penrose mostró que la Teoría General de la Relatividad de Einstein, implica
+                            que el espacio y el tiempo han de tener un principio en el Big Bang y un final dentro de
+                            agujeros negros. Es conocido por sus intentos de aunar la relatividad general con la
+                            teoría cuántica y por sus aportaciones íntegramente relacionadas con la cosmología. Una
+                            conjetura es que el universo no tiene bordes o límites en el tiempo imaginario.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div class="container">
+            <div class="row justify-content-center align-items-start">
+
+                <div id="alertaExito" class="alert alert-success alert-dismissible fade show footer-section__alert"
+                    role="alert">
+                    <strong>¡Mensaje enviado correctamente!</strong> Nos contactaremos contigo a la brevedad
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="alertaError" class="alert alert-danger alert-dismissible fade show footer-section__alert"
+                    role="alert">
+                    <strong>¡Ups, ha ocurrido un problema al enviar el mensaje!</strong> Intenta reenviar el mensaje o
+                    probar en otro momento,
+                    o escríbenos al email info@astroparsec.cl
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="footer-section col-12 col-sm-10 col-md-6 col-lg-4">
+
+                    <form id="formulario" action="php/save-contact.php" method="post">
+                        <h6 class="footer-section__title">CONTACTO</h6>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="nombre">Nombre</label>
+                            <input type="text" class="form-control footer-section__shadow-color" name="nombre"
+                                aria-describedby="emailHelp" placeholder="Ingrese su nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="email">Email</label>
+                            <input type="email" class="form-control footer-section__shadow-color" name="email"
+                                aria-describedby="emailHelp" placeholder="Ejemplo: info@astroparsec.cl" required>
+                            <small id="emailHelp" class="form-text text-muted footer-section__small">Nunca compartiremos
+                                su correo electrónico con terceros.</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="footer-section__label" for="mensaje">Mensaje</label>
+                            <textarea class="form-control footer-section__shadow-color" name="mensaje" rows="4"
+                                id="textAreaFormContact" aria-describedby="textAreaLength" required
+                                maxlength="500"></textarea>
+                            <small id="textAreaLength" class="float-right form-text text-muted footer-section__small"
+                                style="display: none;"></small>
+                        </div>
+                        <button id="btnEnviar" type="submit"
+                            class="btn btn-block footer-section__submit">ENVIAR</button>
+                    </form>
+
+                </div>
+
+                <div class="row col-12 col-sm-10 col-md-6 col-lg-3">
+
+                    <div class="footer-section col-6 col-sm-6 col-md-12 col-lg-12">
+                        <h6 class="footer-section__title">ASTRONOMÍA CHILE</h6>
+                        <p>Dirección: Aillavilú 1030, Santiago, Chile</p>
+                        <p>Teléfono: +56 22 1234 567</p>
+                        <p>email: info@astrochile.cl</p>
+                    </div>
+
+                    <div class="footer-section col-6 col-sm-6 col-md-12 col-lg-12">
+                        <h6 class="footer-section__title">REDES SOCIALES</h6>
+                        <div class="row">
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <a class="footer-section__a" href="https://www.instagram.com/"><img
+                                        class="footer-section__img" src="assets/instagram.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-9 col-lg-9">
+                                <a class="footer-section__a" href="https://www.youtube.com/"><img
+                                        class="footer-section__img" src="assets/youtube.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <a class="footer-section__a" href="https://twitter.com/?lang=es"><img
+                                        class="footer-section__img" src="assets/twitter.png" alt="icno"></a>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-9 col-lg-9">
+                                <a class="footer-section__a" href="https://www.facebook.com/"><img
+                                        class="footer-section__img" src="assets/facebook.png" alt="icno"></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="footer-section col-12 col-sm-10 col-md-12 col-lg-5">
+                    <h6 class="footer-section__title">LOCALIZACIÓN</h6>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1664.8067384058488!2d-70.65401422755211!3d-33.433320119175356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5bb71870217%3A0x19c7f487465d861f!2sAillavil%C3%BA%201037-1085%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1601862416535!5m2!1ses!2scl"
+                        width="100%" height="330" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="row justify-content-center align-items-start col-12 col-sm-10 col-md-12 col-lg-12">
+                    <div class="footer-section__credits">
+                        <p>AstroParsec © All rights reserved | Misael Faúndez</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
