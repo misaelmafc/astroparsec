@@ -86,7 +86,8 @@
                 </li>
                 <li class="nav-item p-2">
                     <a class="nav-link" data-toggle="modal" href="#modaLogin">
-                        <img class="nav-container__img" src="../assets/login.png" alt="" data-toggle="tooltip" data-placement="bottom" title="Iniciar sesión">
+                        <img class="nav-container__img" src="../assets/login.png" alt="" data-toggle="tooltip"
+                            data-placement="bottom" title="Iniciar sesión">
                     </a>
                 </li>
             </ul>
@@ -95,7 +96,24 @@
 
     <main class="main-container">
 
-        <h1>Oops está página no existe</h1>
+        <div class="container-404">
+            <div class="text">
+                <h1>404</h1>
+                <h3>Mil disculpas, la página que buscas no está disponible</h3>
+            </div>
+            <div class="torch"></div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $(document).mousemove(function (event) {
+                    $('.torch').css({
+                        'top': event.pageY,
+                        'left': event.pageX
+                    });
+                });
+            });
+        </script>
 
     </main>
 
